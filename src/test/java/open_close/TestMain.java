@@ -16,7 +16,7 @@ public class TestMain {
     final var validaEmail = new ValidaEmail();
     final var validadorComposite = new ValidadorComposite(validaSenha, validaEmail);
     final var classConcretaNMuda = new ClassConcretaNMuda(validadorComposite);
-    classConcretaNMuda.add();
+    classConcretaNMuda.addValidacao();
   }
 
 }
@@ -28,7 +28,7 @@ class ClassConcretaNMuda {
     this.validaInterfaceComun = validaInterfaceComun;
   }
 
-  void add() {
+  void addValidacao() {
     validaInterfaceComun.valida();
   }
 }
@@ -37,7 +37,7 @@ class ValidaEmail implements ValidaInterfaceComun {
 
   @Override
   public void valida() {
-    System.out.println("Validando campo obrigatorio");
+    System.out.println("Validando Email");
 
   }
 }
@@ -46,7 +46,7 @@ class ValidaSenha implements ValidaInterfaceComun {
 
   @Override
   public void valida() {
-    System.out.println("Validando Phone");
+    System.out.println("Validando Senha");
 
   }
 }
